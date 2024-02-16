@@ -11,6 +11,7 @@ import { PublicKey } from "@solana/web3.js";
 import { solanaConnection } from "@/rpc";
 import { trackLpBurn } from "./trackLpBurn";
 import { promoText } from "@/vars/promo";
+import { InlineKeyboard } from "grammy";
 
 export async function sendAlert(pairs: PhotonPairData[]) {
   try {
@@ -52,6 +53,11 @@ export async function sendAlert(pairs: PhotonPairData[]) {
         // const pairLink = `https://solscan.io/account/${address}`;
         const dexScreenerLink = `https://dexscreener.com/solana/${address}`;
         const birdEyeLink = `https://birdeye.so/token/${tokenAddress}?chain=solana`;
+        const bonkBotLink = `https://t.me/bonkbot_bot?start=${tokenAddress}`;
+        const magnumLink = `https://t.me/magnum_trade_bot?start=${tokenAddress}`;
+        const bananaLink = `https://t.me/BananaGunSolana_bot?start=${tokenAddress}`;
+        const unibot = `https://t.me/solana_unibot?start=${tokenAddress}`;
+        const photonLink = `https://photon-sol.tinyastro.io/en/r/@solhypealerts/${tokenAddress}`;
 
         const now = Math.floor(Date.now() / 1e3);
 
@@ -81,6 +87,17 @@ export async function sendAlert(pairs: PhotonPairData[]) {
         const { lp_burned_perc } = audit;
         const isLpStatusOkay = lp_burned_perc === 100;
 
+        // Keyboard
+        const keyboard = new InlineKeyboard()
+          .url("💳 BONKBot", bonkBotLink)
+          .url("🟣 SolScan", tokenLink)
+          .row()
+          .url("🔫 Magnum", magnumLink)
+          .url("🍌 BananaGun", bananaLink)
+          .row()
+          .url("🦄 Unibot", unibot)
+          .url("⚡ Photon", photonLink);
+
         // Text
         const text = `${hardCleanUpBotMessage(
           name
@@ -105,6 +122,7 @@ ${promoText}`;
               parse_mode: "MarkdownV2",
               // @ts-expect-error Param not found
               disable_web_page_preview: true,
+              reply_markup: keyboard,
             }
           );
 
