@@ -53,11 +53,12 @@ export async function sendAlert(pairs: PhotonPairData[]) {
         // const pairLink = `https://solscan.io/account/${address}`;
         const dexScreenerLink = `https://dexscreener.com/solana/${address}`;
         const birdEyeLink = `https://birdeye.so/token/${tokenAddress}?chain=solana`;
-        const bonkBotLink = `https://t.me/bonkbot_bot?start=${tokenAddress}`;
-        const magnumLink = `https://t.me/magnum_trade_bot?start=${tokenAddress}`;
+        const bonkBotLink = `https://t.me/bonkbot_bot?start=ref_teji6`;
+        const magnumLink = `https://t.me/magnum_trade_bot?start=YIUrOaUs`;
         const bananaLink = `https://t.me/BananaGunSolana_bot?start=${tokenAddress}`;
-        const unibot = `https://t.me/solana_unibot?start=${tokenAddress}`;
-        const photonLink = `https://photon-sol.tinyastro.io/en/r/@solhypealerts/${tokenAddress}`;
+        const unibot = `https://t.me/solana_unibot?start=r-reelchasin`;
+        const photonLink = `https://photon-sol.tinyastro.io/@hunnid/${tokenAddress}`;
+        const solBotLink = `https://t.me/SolanaTradingBot?start=6VRAlANiH`;
 
         const now = Math.floor(Date.now() / 1e3);
 
@@ -90,7 +91,7 @@ export async function sendAlert(pairs: PhotonPairData[]) {
         // Keyboard
         const keyboard = new InlineKeyboard()
           .url("💳 BONKBot", bonkBotLink)
-          .url("🟣 SolScan", tokenLink)
+          .url("🟣 SolBot", solBotLink)
           .row()
           .url("🔫 Magnum", magnumLink)
           .url("🍌 BananaGun", bananaLink)
