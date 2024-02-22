@@ -55,10 +55,10 @@ export async function sendAlert(pairs: PhotonPairData[]) {
         const birdEyeLink = `https://birdeye.so/token/${tokenAddress}?chain=solana`;
         const bonkBotLink = `https://t.me/bonkbot_bot?start=ref_teji6_ca_${tokenAddress}`;
         const magnumLink = `https://t.me/magnum_trade_bot?start=YIUrOaUs_snipe_${tokenAddress}`;
-        const bananaLink = `https://t.me/BananaGunSolana_bot?start=${tokenAddress}`;
         const unibot = `https://t.me/solana_unibot?start=r-reelchasin-${tokenAddress}`;
-        const photonLink = `https://photon-sol.tinyastro.io/@hunnid/${tokenAddress}`;
         const solBotLink = `https://t.me/SolanaTradingBot?start=${tokenAddress}-6VRAlANiH`;
+        // const bananaLink = `https://t.me/BananaGunSolana_bot?start=${tokenAddress}`;
+        // const photonLink = `https://photon-sol.tinyastro.io/@hunnid/${tokenAddress}`;
 
         const now = Math.floor(Date.now() / 1e3);
 
@@ -94,10 +94,10 @@ export async function sendAlert(pairs: PhotonPairData[]) {
           .url("🟣 SolBot", solBotLink)
           .row()
           .url("🔫 Magnum", magnumLink)
-          .url("🍌 BananaGun", bananaLink)
-          .row()
-          .url("🦄 Unibot", unibot)
-          .url("⚡ Photon", photonLink);
+          .url("🦄 Unibot", unibot);
+        // .url("🍌 BananaGun", bananaLink)
+        // .row()
+        // .url("⚡ Photon", photonLink);
 
         // Text
         const text = `${hardCleanUpBotMessage(
