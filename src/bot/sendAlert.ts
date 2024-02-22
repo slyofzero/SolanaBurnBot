@@ -53,12 +53,12 @@ export async function sendAlert(pairs: PhotonPairData[]) {
         // const pairLink = `https://solscan.io/account/${address}`;
         const dexScreenerLink = `https://dexscreener.com/solana/${address}`;
         const birdEyeLink = `https://birdeye.so/token/${tokenAddress}?chain=solana`;
-        const bonkBotLink = `https://t.me/bonkbot_bot?start=ref_teji6`;
-        const magnumLink = `https://t.me/magnum_trade_bot?start=YIUrOaUs`;
+        const bonkBotLink = `https://t.me/bonkbot_bot?start=ref_teji6_ca_${tokenAddress}`;
+        const magnumLink = `https://t.me/magnum_trade_bot?start=YIUrOaUs_snipe_${tokenAddress}`;
         const bananaLink = `https://t.me/BananaGunSolana_bot?start=${tokenAddress}`;
-        const unibot = `https://t.me/solana_unibot?start=r-reelchasin`;
+        const unibot = `https://t.me/solana_unibot?start=r-reelchasin-${tokenAddress}`;
         const photonLink = `https://photon-sol.tinyastro.io/@hunnid/${tokenAddress}`;
-        const solBotLink = `https://t.me/SolanaTradingBot?start=6VRAlANiH`;
+        const solBotLink = `https://t.me/SolanaTradingBot?start=${tokenAddress}-6VRAlANiH`;
 
         const now = Math.floor(Date.now() / 1e3);
 
