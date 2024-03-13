@@ -6,6 +6,7 @@ import { errorHandler, log } from "@/utils/handlers";
 import { PhotonPairData } from "@/types/livePairs";
 import { formatToInternational, toTitleCase } from "@/utils/general";
 import { promoText } from "@/vars/promo";
+import { InlineKeyboard } from "grammy";
 
 export async function trackLpBurn(pair: PhotonPairData) {
   try {
@@ -53,7 +54,13 @@ export async function trackLpBurn(pair: PhotonPairData) {
         socialsText += `\n       *├─* No Links Available`;
       }
 
+      const bonkBotLink = `https://t.me/bonkbot_bot?start=ref_teji6_ca_${tokenAddress}`;
+      const unibot = `https://t.me/solana_unibot?start=r-reelchasin-${tokenAddress}`;
+
       const change = (mcap / initialMC).toFixed(2);
+      const keyboard = new InlineKeyboard()
+        .url("🐶 Bonk Bot", bonkBotLink)
+        .url("🦄 Unibot", unibot);
 
       const text = `🔥 *New Liquidity Burn for ${hardCleanUpBotMessage(
         symbol
@@ -85,6 +92,7 @@ ${promoText}`;
           parse_mode: "MarkdownV2",
           // @ts-expect-error Param not found
           disable_web_page_preview: true,
+          reply_markup: keyboard,
         })
         .then(() => log(`Sent message for ${address}`))
         .catch((e) => {

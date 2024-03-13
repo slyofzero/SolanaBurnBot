@@ -32,6 +32,7 @@ export async function sendAlert(pairs: PhotonPairData[]) {
 
       newIndexedTokens.push(tokenAddress);
       const age = moment(created_timestamp * 1e3).fromNow();
+
       const ageMinutes =
         Number(age.replace("minutes ago", "")) ||
         Number(age.replace("a minutes ago", "1")) ||
