@@ -55,7 +55,7 @@ export async function trackLpBurn(pair: PhotonPairData) {
       }
 
       const bonkBotLink = `https://t.me/bonkbot_bot?start=ref_teji6_ca_${tokenAddress}`;
-      const unibot = `https://t.me/solana_unibot?start=r-reelchasin-${tokenAddress}`;
+      const unibot = `https://t.me/paris_trojanbot?start=r-reelchasin-${tokenAddress}`;
 
       const change = (mcap / initialMC).toFixed(2);
       const keyboard = new InlineKeyboard()

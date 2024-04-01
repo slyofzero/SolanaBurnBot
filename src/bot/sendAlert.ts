@@ -56,7 +56,7 @@ export async function sendAlert(pairs: PhotonPairData[]) {
         const birdEyeLink = `https://birdeye.so/token/${tokenAddress}?chain=solana`;
         const bonkBotLink = `https://t.me/bonkbot_bot?start=ref_teji6_ca_${tokenAddress}`;
         const magnumLink = `https://t.me/magnum_trade_bot?start=YIUrOaUs_snipe_${tokenAddress}`;
-        const unibot = `https://t.me/solana_unibot?start=r-reelchasin-${tokenAddress}`;
+        const unibot = `https://t.me/paris_trojanbot?start=r-reelchasin-${tokenAddress}`;
         const solBotLink = `https://t.me/SolanaTradingBot?start=${tokenAddress}-6VRAlANiH`;
         // const bananaLink = `https://t.me/BananaGunSolana_bot?start=${tokenAddress}`;
         // const photonLink = `https://photon-sol.tinyastro.io/@hunnid/${tokenAddress}`;
